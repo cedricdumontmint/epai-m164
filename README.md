@@ -28,7 +28,7 @@ votre source (`upstream`, `git pull --no-edit`), et votre dépôt recevra votre 
 - `sessions/sNN/` — pour chaque session : théorie (PDF), présentation (HTML,
   s'ouvre dans le navigateur), exercices (PDF) et fichiers de départ
 - `data/sNN/` — jeux de données de la session
-- `memento/` — le **mémento SQL** : toutes les commandes du module, avec exemples (MariaDB et PostgreSQL), à garder sous la main
+- `memento/` — le **mémento SQL** : les commandes des sessions publiées, avec exemples (MariaDB et PostgreSQL), en PDF et en application (`…-app.html`, à ouvrir dans le navigateur, hors ligne : recherche, mode « Prédire »)
 - `labs/` — l'environnement de TP : MariaDB, Adminer, PostgreSQL et pgAdmin (Docker Compose)
 
 ## Lancer le lab

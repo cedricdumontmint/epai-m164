@@ -63,6 +63,8 @@ Sous **Git Bash (Windows)**, ajoutez `winpty` devant `docker exec -it …`.
 - `init/mariadb/01-ecole.sql`, `init/postgres/01-ecole.sql` — base de démonstration
   `ecole` (classes, élèves). Les scripts d'initialisation ne s'exécutent qu'au
   **premier** démarrage du volume (sinon : `docker compose down -v`).
+- `memento/` — jeu d'essai du mémento SQL (quatre tables et deux CSV), monté dans les conteneurs
+  sous `/memento` ; il sert à vérifier les exemples du mémento.
 - `reference/` — **corrigé de référence** du schéma SprintBoard (MariaDB et
   PostgreSQL). Il n'est remis aux élèves qu'à la fin de la S10, après la
   sommative.
