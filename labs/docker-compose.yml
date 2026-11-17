@@ -1,4 +1,4 @@
-# Environnement de TP du m164 : MariaDB + Adminer (PostgreSQL en option).
+# Environnement de TP du m164 : MariaDB + Adminer (PostgreSQL + pgAdmin en option).
 # Identifiants de LAB uniquement (voir README.md) — jamais en production.
 services:
   mariadb:
@@ -31,6 +31,25 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - ./init/postgres:/docker-entrypoint-initdb.d:ro
 
+  pgadmin:
+    # Client graphique de PostgreSQL, avec le serveur m164-postgres déjà déclaré :
+    #   docker compose --profile complet up -d   puis   http://localhost:5050
+    profiles: ["complet"]
+    image: dpage/pgadmin4:9
+    container_name: m164-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: apprenti@example.com
+      PGADMIN_DEFAULT_PASSWORD: m164lab
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+    depends_on:
+      - postgres
+
   adminer:
     image: adminer:5
     container_name: m164-adminer
@@ -42,3 +61,4 @@ services:
 volumes:
   mariadb-data:
   postgres-data:
+  pgadmin-data:

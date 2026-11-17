@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "m164-postgres",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "ecole",
+      "Username": "apprenti",
+      "SSLMode": "prefer"
+    }
+  }
+}

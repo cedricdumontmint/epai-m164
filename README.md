@@ -28,7 +28,7 @@ votre source (`upstream`, `git pull --no-edit`), et votre dépôt recevra votre 
 - `sessions/sNN/` — pour chaque session : théorie (PDF), présentation (HTML,
   s'ouvre dans le navigateur), exercices (PDF) et fichiers de départ
 - `data/sNN/` — jeux de données de la session
-- `labs/` — l'environnement de TP : MariaDB, Adminer et PostgreSQL (Docker Compose)
+- `labs/` — l'environnement de TP : MariaDB, Adminer, PostgreSQL et pgAdmin (Docker Compose)
 
 ## Lancer le lab
 
