@@ -12,6 +12,7 @@ gestion de projets agiles de l'entreprise fictive **Pixelwerk SA** (Fribourg).
 1. Installez Git.
 2. Installez Docker (Docker Desktop sous Windows et macOS, Docker Engine sous Linux).
 3. Clonez ce dépôt : `git clone https://github.com/cedricdumontmint/epai-m164.git`
+4. Installez un éditeur Markdown pour vos notes : [MarkFlowy](https://github.com/drl990114/MarkFlowy/releases) (libre, mode WYSIWYG ; tout éditeur de texte convient aussi).
 
 Aucun compte n'est nécessaire : ce dépôt est public. À chaque session : `git pull`
 pour récupérer les nouveaux documents. **Ne modifiez pas cette copie** : copiez un
