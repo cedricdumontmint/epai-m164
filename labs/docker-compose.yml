@@ -1,0 +1,44 @@
+# Environnement de TP du m164 : MariaDB + Adminer (PostgreSQL en option).
+# Identifiants de LAB uniquement (voir README.md) — jamais en production.
+services:
+  mariadb:
+    image: mariadb:11.4
+    container_name: m164-mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: m164lab
+      MARIADB_DATABASE: ecole
+      MARIADB_USER: apprenti
+      MARIADB_PASSWORD: m164lab
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./init/mariadb:/docker-entrypoint-initdb.d:ro
+
+  postgres:
+    # Service optionnel, utilisé dès la S06 :
+    #   docker compose --profile complet up -d
+    profiles: ["complet"]
+    image: postgres:17
+    container_name: m164-postgres
+    environment:
+      POSTGRES_USER: apprenti
+      POSTGRES_PASSWORD: m164lab
+      POSTGRES_DB: ecole
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./init/postgres:/docker-entrypoint-initdb.d:ro
+
+  adminer:
+    image: adminer:5
+    container_name: m164-adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: mariadb
+    ports:
+      - "8080:8080"
+
+volumes:
+  mariadb-data:
+  postgres-data:
