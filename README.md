@@ -46,3 +46,5 @@ Adminer : <http://localhost:8080> — utilisateur `apprenti`, mot de passe
 - [`s01`](sessions/s01/)
 - [`s02`](sessions/s02/)
 - [`s03`](sessions/s03/)
+- [`s04`](sessions/s04/)
+- [`s05`](sessions/s05/)
